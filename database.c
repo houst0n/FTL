@@ -530,7 +530,7 @@ int lastDBsave = 0;
 void *DB_thread(void *val)
 {
 	// Set thread name
-	prctl(PR_SET_NAME,"database",0,0,0);
+	//prctl(PR_SET_NAME,"database",0,0,0);
 
 	// Save timestamp as we do not want to store immediately
 	// to the database

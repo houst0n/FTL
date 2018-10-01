@@ -306,7 +306,7 @@ void *telnet_connection_handler_thread(void *socket_desc)
 	// Set thread name
 	char threadname[16];
 	sprintf(threadname,"telnet-%i",sock);
-	prctl(PR_SET_NAME,threadname,0,0,0);
+	//prctl(PR_SET_NAME,threadname,0,0,0);
 	//Receive from client
 	ssize_t n;
 	while((n = recv(sock,client_message,SOCKETBUFFERLEN-1, 0)))
@@ -363,7 +363,7 @@ void *socket_connection_handler_thread(void *socket_desc)
 	// Set thread name
 	char threadname[16];
 	sprintf(threadname,"socket-%i",sock);
-	prctl(PR_SET_NAME,threadname,0,0,0);
+	//prctl(PR_SET_NAME,threadname,0,0,0);
 	//Receive from client
 	ssize_t n;
 	while((n = recv(sock,client_message,SOCKETBUFFERLEN-1, 0)))
@@ -435,7 +435,7 @@ void *telnet_listening_thread_IPv4(void *args)
 	pthread_attr_setdetachstate(&attr, PTHREAD_CREATE_DETACHED);
 
 	// Set thread name
-	prctl(PR_SET_NAME,"telnet-IPv4",0,0,0);
+	//prctl(PR_SET_NAME,"telnet-IPv4",0,0,0);
 
 	// Listen as long as FTL is not killed
 	while(!killed)
@@ -476,7 +476,7 @@ void *telnet_listening_thread_IPv6(void *args)
 	pthread_attr_setdetachstate(&attr, PTHREAD_CREATE_DETACHED);
 
 	// Set thread name
-	prctl(PR_SET_NAME,"telnet-IPv6",0,0,0);
+	//prctl(PR_SET_NAME,"telnet-IPv6",0,0,0);
 
 	// Listen as long as FTL is not killed
 	while(!killed)
@@ -517,7 +517,7 @@ void *socket_listening_thread(void *args)
 	pthread_attr_setdetachstate(&attr, PTHREAD_CREATE_DETACHED);
 
 	// Set thread name
-	prctl(PR_SET_NAME,"socket listener",0,0,0);
+	//prctl(PR_SET_NAME,"socket listener",0,0,0);
 
 	// Listen as long as FTL is not killed
 	while(!killed)

@@ -31,7 +31,7 @@
 #include <netdb.h>
 #include <errno.h>
 #include <pthread.h>
-#include <sys/prctl.h>
+// #include <sys/prctl.h>
 //#include <math.h>
 #include <pwd.h>
 // syslog
